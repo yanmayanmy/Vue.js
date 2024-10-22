@@ -6,5 +6,5 @@ const count2 = ref(4)
 </script>
 <template>
   <div>{{ count + count2 }}</div>
-  <div>{{ count > 3 ? 'True' : 'False' }}</div>
+  <div v-text="count"></div>
 </template>
