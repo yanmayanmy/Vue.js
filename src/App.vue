@@ -1,10 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 
-const count = ref(2)
-const count2 = ref(4)
+const message = ref("<h1>hello</h1>")
 </script>
 <template>
-  <div>{{ count + count2 }}</div>
-  <div v-text="count"></div>
+  <div>{{ message }}</div>
+  <div v-html='message'></div>
 </template>
