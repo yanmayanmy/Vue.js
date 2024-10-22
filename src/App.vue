@@ -1,16 +1,8 @@
 <script setup>
+  const vueURL = 'https://google.com'
+  const vueIDd = 'link'
 
 </script>
 <template>
-  <button :disabled="false">false</button>
-  <br>
-  <button :disabled="true">true</button>
-  <br>
-  <button :disabled="undefined">true</button>
-  <br>
-  <button :disabled="NaN">true</button>
-  <br>
-  <button :disabled="foo">true</button>
-  <br>
-  <button :disabled="''">true</button>
+  <a v-bind="{ id: vueIDd, href: vueURL }">Jump to Google</a>
 </template>
