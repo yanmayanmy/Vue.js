@@ -1,30 +1,30 @@
 <script setup>
-import { ref, watch, watchEffect } from 'vue';
-const count1 = ref(0)
-const count2 = ref({
-  a: 0,
-  b: 0
-})
-const count3 = ref(0)
+import { ref } from 'vue';
 
-watch([count1, () => count2.value.a], (newVal, oldVal) => {
-  console.log('watch')
-  console.log('newVal', newVal)
-  console.log('oldVal', oldVal)
-  console.log(count1.value, count2.value, count3.value)
-})
+const isRed = ref(true)
+const isBgBlue = ref(true)
+const className = ref('red')
+function toggleClass() {
+  isRed.value = !isRed.value
+  isBgBlue.value = !isBgBlue.value
+}
 
-watchEffect(() => {
-  console.log('watchEffect')
-  console.log(count1.value, count2.value, count3.value)
-})
 </script>
 
 <template>
-  <p>count1 {{ count1 }}</p>
-  <p>count2 {{ count2 }}</p>
-  <p>count3 {{ count3 }}</p>
-  <button @click="count1++">1</button>
-  <button @click="count2.a++">2</button>
-  <button @click="count3++">3</button>
+  <div class="border" :class="[className, {'bg-blue': isBgBlue}]">Hello World</div>
+  <button @click="toggleClass">Change Style</button>
 </template>
+
+<style>
+.red {
+  color: red;
+}
+.bg-blue {
+  background-color: blue;
+}
+.border {
+  border: 1px solid red;
+}
+</style>
+
