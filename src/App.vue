@@ -1,8 +1,15 @@
 <script setup>
-  const vueURL = 'https://google.com'
-  const vueIDd = 'link'
+import { ref } from 'vue';
+
+  const count = ref(0)
+
+  function countUp() {
+    count.value++
+  }
 
 </script>
 <template>
-  <a v-bind="{ id: vueIDd, href: vueURL }">Jump to Google</a>
+  <p>{{ count }}</p>
+  <button v-on:click="count++">Count up</button>
+  <button @click="countUp">Count up</button>
 </template>
