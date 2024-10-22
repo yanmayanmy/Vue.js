@@ -14,8 +14,13 @@ const instructor = reactive({
   age: 25,
   sns: {
     insta: 'yanma_yanmy'
-  }
+  },
+  email: ref('yuta.yamauchi@accenture.com')
 })
+
+const items = reactive([ref(123), ref(234), ref(345)])
+console.log(items[0])
+console.log(items[0].value)
 
 instructor.bio = 'hello' // Adding a property
 
@@ -23,11 +28,13 @@ console.log(info.value.students)
 console.log(info.value.rating)
 console.log(instructor.name)
 console.log(instructor.age)
+console.log(instructor.email) // You don't need .value when using ref() inside reactive
 
 function increment() {
   price.value += 1
   instructor.bio = 'hi'
   instructor.sns.insta = 'hi'
+  instructor.email = 'hi'
   console.log(price)
   console.log(price.value)
 }
@@ -42,6 +49,7 @@ function increment() {
 <p>instructor age:{{ instructor.age }}</p>
 <p>instructor bio:{{ instructor.bio }}</p>
 <p>instructor sns:{{ instructor.sns.insta }}</p>
+<p>instructor email:{{ instructor.email }}</p>
   <button @click="increment">button</button>
 </template>
 
