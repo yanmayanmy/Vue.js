@@ -5,10 +5,8 @@ import { ref } from 'vue';
   let x = ref(0)
   let y = ref(0)
 
-  function countUp(event) {
-    console.log(event)
-    x.value = event.clientX
-    y.value = event.clientY
+  function countUp(event, times) {
+    count.value = count.value*times
   }
 
 </script>
@@ -16,6 +14,6 @@ import { ref } from 'vue';
   <p>{{ count }}</p>
   <p>{{ x }}</p>
   <p>{{ y }}</p>
-  <button v-on:click="count = $event.clientX">Count up</button>
-  <button @click="countUp">Count up</button>
+  <button v-on:click="count++">Count up</button>
+  <button @click="countUp($event, 5)">x5</button>
 </template>
