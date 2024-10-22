@@ -1,10 +1,15 @@
 <script setup>
-import { ref } from 'vue';
-  const userInput = ref('')
+import { ref, computed } from 'vue';
+  const score = ref(0)
+  const evaluate = computed(() => {
+    return score.value > 3 ? 'Good' : 'Bad'
+  })
+console.log(evaluate.value)
 </script>
 
 <template>
-  <p>{{ userInput }}</p>
-  <input type="text" v-model="userInput">
-  <button @click="userInput = 'hi'">Button</button>
+  <p>{{ score }}</p>
+  <p>{{ evaluate }}</p>
+  <p>{{ score > 3 ? 'Good' : 'Bad' }}</p>
+  <button @click="score++">Button</button>
 </template>
