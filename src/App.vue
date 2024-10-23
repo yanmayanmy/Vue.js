@@ -5,7 +5,6 @@ const count = ref(1)
 </script>
 
 <template>
-  <ShowCount :tar="count" v-bind="{ bar: '100' }" />
-  <p>{{ count }}</p>
+  <ShowCount :total-score="count" />
   <button @click="count++">+1</button>
 </template>
