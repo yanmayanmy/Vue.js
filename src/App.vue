@@ -1,13 +1,14 @@
 <script setup>
-import { ref } from 'vue';
-
+import { ref } from 'vue'
+const ok = ref(true)
+const maybeOk = ref(false)
 </script>
 
 <template>
-  <div :style="{ color:'red', backgroundColor: 'blue'}">Hello World</div>
+  <button @click="ok = !ok">toggle</button>
+  <p v-if="ok">OK!</p>
+  <p v-else-if="maybeOk">maybe OK.</p>
+  <p v-else>Not OK...</p>
 </template>
 
-<style>
-
-</style>
-
+<style></style>
