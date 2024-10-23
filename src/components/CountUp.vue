@@ -7,6 +7,11 @@ const count = ref(0)
 <template>
   <p>{{ $attrs }}</p>
   <h2 v-bind="$attrs">CountUp</h2>
-  <p>count: {{ count }}</p>
+  <p class="red">count: {{ count }}</p>
   <button @click="count++">+1</button>
 </template>
+<style scoped>
+.blue {
+  color: blue;
+}
+</style>
