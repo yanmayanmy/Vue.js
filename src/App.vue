@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <p v-for="n in 10" :key="n">
+  <p v-for="n of 10" :key="n">
     {{ n }}
   </p>
 </template>
