@@ -1,15 +1,8 @@
-<script setup>
-import { ref } from 'vue'
-const user = ref({
-  name: 'Yuta',
-  age: 25,
-  gender: 'male',
-})
-</script>
+<script setup></script>
 
 <template>
-  <p v-for="(value, key, index) in user" :key="value">
-    {{ value }}
+  <p v-for="n in 10" :key="n">
+    {{ n }}
   </p>
 </template>
 
