@@ -1,16 +1,11 @@
 <script setup>
-import CountUp from './components/CountUp.vue'
-import BaseButton from './components/BaseButton.vue'
+import { ref } from 'vue'
+import ShowCount from './components/ShowCount.vue'
+const count = ref(0)
 </script>
-<template>
-  <h1 class="blue">App</h1>
-  <CountUp v-if="true" id="base-button" class="border" />
-  <BaseIcon v-if="true" />
-  <BaseButton v-show="true" id="base-button" />
-</template>
 
-<style>
-.red {
-  color: red;
-}
-</style>
+<template>
+  <ShowCount :foo="count" bar="hello" />
+  <!-- Or you can define the attributes all at once -->
+  <ShowCount v-bind="{ foo: count, bar: 'hello' }" />
+</template>
