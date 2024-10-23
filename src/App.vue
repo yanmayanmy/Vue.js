@@ -5,17 +5,9 @@ const ok = ref(true)
 
 <template>
   <button @click="ok = !ok">toggle</button>
-  <div v-if="ok">
-    <p>OK</p>
-    <p>Hello</p>
-    <p>Hi</p>
-  </div>
-  <!-- recommended since template tag doesn't appear in html file -->
-  <template v-if="ok">
-    <p>OK</p>
-    <p>Hello</p>
-    <p>Hi</p>
-  </template>
+  <p>OK</p>
+  <p v-show="ok">Hello</p>
+  <p>Hi</p>
 </template>
 
 <style></style>
