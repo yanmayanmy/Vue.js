@@ -1,9 +1,11 @@
 <script setup>
-// import { ref } from 'vue'
+import { ref } from 'vue'
 import ShowCount from './components/ShowCount.vue'
-// const count = ref(0)
+const count = ref(1)
 </script>
 
 <template>
-  <ShowCount v-bind="{ foo: undefined, bar: 'hello' }" />
+  <ShowCount :tar="count" v-bind="{ bar: '100' }" />
+  <p>{{ count }}</p>
+  <button @click="count++">+1</button>
 </template>
