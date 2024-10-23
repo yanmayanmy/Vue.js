@@ -10,10 +10,10 @@ const fruits = ref([
 <template>
   <ul>
     <button @click="fruits.shift()">Delete</button>
-    <li v-for="(fruit, index) in fruits" :key="fruit.id">
+    <li v-for="({ id, name }, index) in fruits" :key="id">
       <input type="text" />
       {{ index }}:
-      {{ fruit.name }}
+      {{ name }}
     </li>
   </ul>
 </template>
