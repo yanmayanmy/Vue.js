@@ -1,23 +1,28 @@
 <script setup>
-import { ref } from 'vue'
 import BaseCard from './components/BaseCard.vue'
-
-const y = ref('y')
 </script>
 
 <template>
   <h1>slots</h1>
   <BaseCard>
-    <h2>hello</h2>
-    <p>How are you?</p>
+    <template v-slot:header>
+      <h2>Vue.js</h2>
+    </template>
+    <template v-slot:main>
+      <p>hello world</p>
+    </template>
+    <template #footer>
+      <p>yuta yamauchi</p>
+    </template>
   </BaseCard>
+  <!-- You can still use fall back contents -->
   <BaseCard>
-    <ul>
-      <li>{{ y }}</li>
-      <li>{{ x }}</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
+    <template v-slot:header>
+      <h2>HTML</h2>
+    </template>
+    <template v-slot:main>
+      <p>hello world</p>
+    </template>
+    <template #footer> </template>
   </BaseCard>
-  <BaseCard> </BaseCard>
 </template>

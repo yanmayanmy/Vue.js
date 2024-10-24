@@ -1,14 +1,18 @@
-<script setup>
-import { ref } from 'vue'
-
-const x = ref('x')
-</script>
+<script setup></script>
 
 <template>
   <div>
-    <slot>
-      <p>Default contents</p>
-    </slot>
+    <header>
+      <slot name="header" />
+    </header>
+    <main>
+      <slot name="main" />
+    </main>
+    <footer>
+      <slot name="footer">
+        <p>instructor: anonymous</p>
+      </slot>
+    </footer>
   </div>
 </template>
 
