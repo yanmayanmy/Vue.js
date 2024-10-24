@@ -19,4 +19,5 @@ const y = ref('y')
       <li>3</li>
     </ul>
   </BaseCard>
+  <BaseCard> </BaseCard>
 </template>

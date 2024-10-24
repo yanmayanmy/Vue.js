@@ -6,8 +6,9 @@ const x = ref('x')
 
 <template>
   <div>
-    <slot />
-    {{ x }}
+    <slot>
+      <p>Default contents</p>
+    </slot>
   </div>
 </template>
 
