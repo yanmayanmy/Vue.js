@@ -1,45 +1,21 @@
 <script setup>
 import { ref } from 'vue'
+import { useRefLimitedHistory } from './composables/useRefLimitedHistory'
 
-const userInput = ref('')
-const message = ref('')
-const checked = ref('not checked')
-const fruits = ref([])
+const count = ref(0)
+const { history, undo } = useRefLimitedHistory(count, ref(5))
+const userInput = ref('default')
+const { history: history2, undo: undo2 } = useRefLimitedHistory(userInput, 3)
 </script>
 
 <template>
-  <h1>v-model</h1>
-  <h2>Text</h2>
+  <p>count: {{ count }}</p>
+  <button @click="count++">+1</button>
+  <p>count: {{ history }}</p>
+  <button @click="undo()">undo</button>
+
+  <p>userInput: {{ userInput }}</p>
   <input v-model="userInput" type="text" />
-  <p>{{ userInput }}</p>
-  <h2>Textarea</h2>
-  <textarea v-model="message"></textarea>
-  <p style="white-space: pre">{{ message }}</p>
-  <h2>Check box</h2>
-  <input
-    id="checkbox"
-    v-model="checked"
-    type="checkbox"
-    true-value="checked"
-    false-value="not checked"
-  />
-  <label for="checkbox">{{ checked }}</label>
-  <p>Fruits</p>
-  <input v-model="fruits" id="Apple" type="checkbox" value="Apple is checked" />
-  <label for="Apple">Apple</label>
-  <input
-    v-model="fruits"
-    id="Banana"
-    type="checkbox"
-    value="Banana is checked"
-  />
-  <label for="Banana">Banana</label>
-  <input
-    v-model="fruits"
-    id="Grape"
-    type="checkbox"
-    value="Grapes is checked"
-  />
-  <label for="Grape">Grape</label>
-  <p>{{ fruits }}</p>
+  <p>userInput: {{ history2 }}</p>
+  <button @click="undo2()">undo</button>
 </template>
