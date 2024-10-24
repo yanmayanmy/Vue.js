@@ -9,18 +9,7 @@ const pageCount = ref(1)
     <button @click="pageCount = 1">1</button>
     <button @click="pageCount = 2">2</button>
     <button @click="pageCount = 3">3</button>
-
-    <header>
-      <slot name="header" :page-count="pageCount" foo="foo" />
-    </header>
-    <main>
-      <slot name="main" />
-    </main>
-    <footer>
-      <slot name="footer">
-        <p>instructor: anonymous</p>
-      </slot>
-    </footer>
+    <slot :page-count="pageCount" foo="foo" />
   </div>
 </template>
 
