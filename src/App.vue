@@ -1,20 +1,22 @@
 <script setup>
 import { ref } from 'vue'
-import ShowCount from './components/ShowCount.vue'
-import ResetButton from './components/ResetButton.vue'
-const count1 = ref(1)
-const count2 = ref(1)
+import BaseCard from './components/BaseCard.vue'
 
-function onReset(value) {
-  count2.value = value
-}
+const y = ref('y')
 </script>
 
 <template>
-  <ShowCount :total-score="count1" />
-  <button @click="count1++">+1</button>
-  <ResetButton @reset-count="count1 = $event" />
-  <ShowCount :total-score="count2" />
-  <button @click="count2++">+1</button>
-  <ResetButton @reset-count="onReset" />
+  <h1>slots</h1>
+  <BaseCard>
+    <h2>hello</h2>
+    <p>How are you?</p>
+  </BaseCard>
+  <BaseCard>
+    <ul>
+      <li>{{ y }}</li>
+      <li>{{ x }}</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </BaseCard>
 </template>
