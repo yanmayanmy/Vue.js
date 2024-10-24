@@ -1,17 +1,16 @@
 <script setup>
-import { defineAsyncComponent, shallowRef } from 'vue'
-import CompA from './components/CompA.vue'
-// import CompB from './components/CompB.vue'
-import CompC from './components/CompC.vue'
+import { ref } from 'vue'
 
-const CompB = defineAsyncComponent(() => import('./components/CompB.vue'))
-const currentComp = shallowRef(CompA)
+const userInput = ref('')
+const message = ref('')
 </script>
 
 <template>
-  <h1>Dynamic component</h1>
-  <button @click="currentComp = CompA">A</button>
-  <button @click="currentComp = CompB">B</button>
-  <button @click="currentComp = CompC">C</button>
-  <component :is="currentComp" />
+  <h1>v-model</h1>
+  <h2>Text</h2>
+  <input v-model="userInput" type="text" />
+  <p>{{ userInput }}</p>
+  <h2>Textarea</h2>
+  <textarea v-model="message"></textarea>
+  <p style="white-space: pre">{{ message }}</p>
 </template>
