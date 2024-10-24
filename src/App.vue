@@ -12,5 +12,8 @@ const currentComp = shallowRef(CompA)
   <button @click="currentComp = CompA">A</button>
   <button @click="currentComp = CompB">B</button>
   <button @click="currentComp = CompC">C</button>
-  <component :is="currentComp"></component>
+  <keep-alive>
+    <component :is="currentComp"></component>
+  </keep-alive>
+  <CompB v-show="currentComp === CompB"></CompB>
 </template>
