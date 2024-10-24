@@ -1,10 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 import CompA from './components/CompA.vue'
 import CompB from './components/CompB.vue'
 import CompC from './components/CompC.vue'
 
-const currentComp = ref(CompA)
+const currentComp = shallowRef(CompA)
 </script>
 
 <template>
