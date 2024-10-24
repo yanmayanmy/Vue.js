@@ -15,10 +15,4 @@ const currentComp = shallowRef(CompA)
   <keep-alive include="CompB,CompC">
     <component :is="currentComp"></component>
   </keep-alive>
-  <keep-alive exclude="CompB,CompC">
-    <component :is="currentComp"></component>
-  </keep-alive>
-  <keep-alive :max="2">
-    <component :is="currentComp"></component>
-  </keep-alive>
 </template>

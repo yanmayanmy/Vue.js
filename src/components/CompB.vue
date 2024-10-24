@@ -1,11 +1,17 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onActivated, onDeactivated, onMounted, onUnmounted, ref } from 'vue'
 
 onMounted(() => {
   console.log('CompB onMounted')
 })
 onUnmounted(() => {
   console.log('CompB onUnmounted')
+})
+onActivated(() => {
+  console.log('CompB onActivated')
+})
+onDeactivated(() => {
+  console.log('CompB onDeactivated')
 })
 
 const count = ref(0)
