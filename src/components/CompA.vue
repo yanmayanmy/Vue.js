@@ -1,8 +1,14 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(0)
+</script>
 
 <template>
   <div>
     <h2>component A</h2>
+    <p>count: {{ count }}</p>
+    <button @click="count++">+1</button>
   </div>
 </template>
 
